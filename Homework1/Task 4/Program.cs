@@ -6,34 +6,42 @@ namespace Task_4
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine(LineValueForY());
-            Factorial();
+            double slope;
+            double Xvalue;
+            double B;
+            int num;
+         
+
+            Console.WriteLine("Please type in the slope (m)");
+            slope = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Please type in the x-value:");
+            Xvalue = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Please type in the y-value:");
+            B = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Please type in a number you would like see a factorial for:");
+            num = Convert.ToInt32(Console.ReadLine());
+
+           Console.WriteLine($"The answer for the Line Value is:{LineValueForY(slope,Xvalue,B)}");
+            Console.WriteLine($"The factorial number for {num} is: {Factorial(num)}");
           
-            
         }
  
         public static double LineValueForY(double m, double x, double b)
         {
-            Console.WriteLine("Please type in the slope (m)");
-            m = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Please type in the x-value:");
-            x = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Please type in the y-value:");
-            b = Convert.ToDouble(Console.ReadLine());
 
             double answer = m * x + b;
 
             return answer;
         }
-        public  double Factoiral(int num)
+        public static double Factorial(int num)
         {
-            double result = 1;
-            while (num != 1)
+            int answer=num;
+            for (int i = num - 1; i > 0; i--)
             {
-                result = result * num;
-                num = num - 1;
+                num *= i;
             }
-            return result;
+            return num;
         }
     }
 }
