@@ -19,10 +19,12 @@ namespace Task3
 
                 Console.WriteLine("Do you have another score to input?: yes/no");
                 answer = Console.ReadLine().ToLower();
-            } while (answer!="yes");
+            } while (answer=="yes");
+
             if (answer=="no")
             {
-                Console.WriteLine($"Your total grade entry is{inputs}");
+                Console.WriteLine($"Your total grade entry is {inputs}");
+                Console.WriteLine($"The average of your test scores is {grade}");
             }
         }
     }
